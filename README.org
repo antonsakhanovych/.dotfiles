@@ -1,0 +1,59 @@
+* My dotfiles
+** Download GNU stow
+#+begin_src sh
+  sudo pacman -S stow
+#+end_src
+
+** Clone this repo
+#+begin_src sh
+  cd
+  git clone https://codeberg.org/rubber_duck/.dotfiles.git
+#+end_src
+
+** Create sym links
+#+begin_src sh
+  cd ~/.dotfiles/
+  stow .
+#+end_src
+
+** Remap Caps to ctrl
+#+begin_src sh
+  # view options using:
+  grep "caps" /usr/share/X11/xkb/rules/base.lst
+  
+  # Remap using:
+  setxkbmap -option "ctrl:nocaps"
+#+end_src
+
+** To fix fonts try:
+#+begin_src sh
+  fc-cache -fv
+#+end_src
+
+** To control audio download alsa-utils package
+#+begin_src sh
+  sudo pacman -S alsa-utils
+#+end_src
+
+** To control brightness install package
+#+begin_src sh
+  sudo pacman -S xorg-xbacklight
+#+end_src
+
+*** Note
+- type command: xrandr --verbose
+  check the identifier of the screen
+- put the code inside /etc/X11/xorg.conf
+  #+begin_src conf
+    Section "Device"	
+        Identifier  "0x72"	
+        Driver      "intel"
+        Option      "Backlight"  "intel_backlight"
+    EndSection
+  #+end_src
+- change the identifier in the code to your identifier
+  
+** To allow mounting ntfs partitions install drivers
+#+begin_src sh
+  sudo pacman -S ntfs-3g
+#+end_src

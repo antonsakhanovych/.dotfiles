@@ -1,0 +1,23 @@
+* My config
+** First run command to download packages
+#+begin_src sh
+  sudo pacman -S feh firefox dmenu polybar kmix network-manager-applet alacritty
+  cd ~/.config/awesome/
+  git clone https://github.com/Elv13/collision
+
+  # install lock screen
+  # install aur dependency
+  cd ~/Downloads
+  git clone https://github.com/Raymo111/i3lock-color
+  cd i3lock-color
+  makepkg -si
+  # install betterlockscreen itself
+  cd ~/Downloads
+  git clone https://aur.archlinux.org/betterlockscreen.git
+  cd betterlockscreen
+  makepkg -si
+#+end_src
+** Packages:
+- feh - package to set wallpapers
+- firefox is just a webbrowser I use
+- dmenu - for awesome prompt
