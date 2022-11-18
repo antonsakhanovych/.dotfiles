@@ -174,8 +174,8 @@ globalkeys = gears.table.join(
     
     awful.key({ modkey, "Shift"   }, "End",
        function ()
-	  awful.spawn.with_shell("betterlockscreen -u ~/.config/awesome/wallpapers/background.jpeg")
-	  awful.spawn.with_shell("betterlockscreen --lock")
+	  awful.spawn.with_shell("betterlockscreen -u ~/.config/awesome/wallpapers/spiritedAway1.jpg")
+	  awful.spawn.with_shell("betterlockscreen -l dimblur")
        end,
        {description = "Lock the screen", group = "client"}),
 
@@ -434,7 +434,7 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 beautiful.useless_gap = 5
 
 --autostart
-awful.spawn.with_shell("feh --bg-scale ~/.config/awesome/wallpapers/background.jpeg")
+awful.spawn.with_shell("feh --bg-scale ~/.config/awesome/wallpapers/spiritedAway1.jpg")
 awful.spawn.with_shell("picom")
 awful.spawn.with_shell("kmix")
 awful.spawn.with_shell("nm-applet")

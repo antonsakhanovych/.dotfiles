@@ -470,6 +470,9 @@
 (use-package lua-mode
   :mode "\\.lua\\'")
 
+(use-package yaml-mode
+  :mode "\\.yml\\'")
+
 (use-package lsp-pyright
 :ensure t
 :hook (python-mode . (lambda () (require 'lsp-pyright) (lsp-deferred))))
@@ -504,7 +507,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(mastodon discover quickrun company-box company lsp-pyright lua-mode nim-mode rjsx-mode typescript-mode lsp-ui lsp-treemacs lsp-ivy lsp-mode org-roam visual-fill-column org-bullets forge magit counsel-projectile projectile evil-commentary evil-matchit evil-collection evil hydra general helpful doom-modeline doom-themes which-key rainbow-delimiters all-the-icons ivy-rich counsel swiper ivy use-package)))
+   '(yaml-mode mastodon discover quickrun company-box company lsp-pyright lua-mode nim-mode rjsx-mode typescript-mode lsp-ui lsp-treemacs lsp-ivy lsp-mode org-roam visual-fill-column org-bullets forge magit counsel-projectile projectile evil-commentary evil-matchit evil-collection evil hydra general helpful doom-modeline doom-themes which-key rainbow-delimiters all-the-icons ivy-rich counsel swiper ivy use-package)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
