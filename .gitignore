@@ -7,5 +7,6 @@
 !awesome
 !alacritty
 !polybar
-
+!starship.toml
+!tmux
 .config/awesome/collision/
