@@ -596,33 +596,36 @@
 
 ** Languages
 #+begin_src emacs-lisp :tangle ./init.el
-    (use-package typescript-mode
-      :mode "\\.ts\\'" "\\.tsx\\'"
-      :hook (typescript-mode . lsp-deferred)
-      :config
-      (setq typescript-indent-level 2))
+  (use-package typescript-mode
+    :mode "\\.ts\\'" "\\.tsx\\'"
+    :hook (typescript-mode . lsp-deferred)
+    :config
+    (setq typescript-indent-level 2))
 
-    (use-package rjsx-mode
-      :hook (rjsx-mode . lsp-deferred)
-      :config
-      (add-to-list 'auto-mode-alist '("components\\/.*\\.js\\'" . rjsx-mode)))
+  (use-package rjsx-mode
+    :hook (rjsx-mode . lsp-deferred)
+    :config
+    (add-to-list 'auto-mode-alist '("components\\/.*\\.js\\'" . rjsx-mode)))
 
-    (use-package nim-mode
-      :mode "\\.nim\\'"
-      :hook (nim-mode . lsp))
+  (use-package nim-mode
+    :mode "\\.nim\\'"
+    :hook (nim-mode . lsp))
 
-    (use-package lua-mode
-      :mode "\\.lua\\'")
+  (use-package lua-mode
+    :mode "\\.lua\\'")
 
-    (use-package yaml-mode
-      :mode "\\.yml\\'")
+  (use-package yaml-mode
+    :mode "\\.yml\\'")
 
 #+end_src
 ** Servers
 #+begin_src emacs-lisp :tangle ./init.el
-  (use-package lsp-pyright
-  :ensure t
-  :hook (python-mode . (lambda () (require 'lsp-pyright) (lsp-deferred))))
+    (use-package lsp-pyright
+    :ensure t
+    :hook (python-mode . (lambda () (require 'lsp-pyright) (lsp-deferred))))
+
+    (use-package lsp-java
+      :hook (java-mode . (lambda () (require 'lsp-java) (lsp-deferred))))
 #+end_src
 
 ** Company
@@ -642,6 +645,10 @@
     :hook (company-mode . company-box-mode))
 #+end_src
 
+** flycheck
+#+begin_src emacs-lisp :tangle ./init.el
+  (use-package flycheck)
+#+end_src
 ** Quickrun
 #+begin_src emacs-lisp :tangle ./init.el
 (use-package quickrun)

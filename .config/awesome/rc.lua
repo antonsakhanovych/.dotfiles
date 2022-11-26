@@ -240,10 +240,10 @@ awful.key({ }, "XF86AudioLowerVolume", function () awful.util.spawn("amixer -q s
     awful.key({ modkey }, "p", function() menubar.show() end,
               {description = "show the menubar", group = "launcher"}),
 
-    awful.key({ }, "XF86MonBrightnessDown", function () awful.util.spawn("xbacklight -dec 15") end,
+    awful.key({ }, "XF86MonBrightnessDown", function () awful.util.spawn("brightnessctl set 10-") end,
 	 { description = "decrease brightness", group = "anton"}),
     awful.key({ }, "XF86MonBrightnessUp", function ()
-	  awful.util.spawn("xbacklight -inc 15") end,
+	  awful.util.spawn("brightnessctl set +10") end,
        {description = "increase volume", group = "anton"}),
     
     awful.key({ }, "Print", function () awful.util.spawn("scrot '/home/rubberduck/Pictures/screenshots/%Y-%m-%d-%T-screenshot.png' -s") end)

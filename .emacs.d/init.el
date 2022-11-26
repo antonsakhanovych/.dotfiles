@@ -477,6 +477,9 @@
 :ensure t
 :hook (python-mode . (lambda () (require 'lsp-pyright) (lsp-deferred))))
 
+(use-package lsp-java
+  :hook (java-mode . (lambda () (require 'lsp-java) (lsp-deferred))))
+
 (use-package company
   :after lsp-mode
   :hook (lsp-mode . company-mode)
@@ -490,6 +493,8 @@
 
 (use-package company-box
   :hook (company-mode . company-box-mode))
+
+(use-package flycheck)
 
 (use-package quickrun)
 
