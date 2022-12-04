@@ -33,6 +33,13 @@
       (add-hook mode (lambda () (display-line-numbers-mode 0))))
 #+end_src
 
+** Keeping folders clean
+#+begin_src emacs-lisp :tangle ./init.el
+  (use-package no-littering)
+
+  (setq auto-save-file-name-transforms
+        `((".*" ,(no-littering-expand-var-file-name "auto-save/") t)))
+#+end_src
 * Font configuration
 #+begin_src emacs-lisp :tangle ./init.el
   (set-face-attribute 'default nil :font "Fira Code Retina" :height my-config/default-font-size)

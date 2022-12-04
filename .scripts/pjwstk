@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+command=sshfs
+mount_point="/home/$USER/PJATK/"
+eska="s26776"
+
+
+if (command -v $command &> /dev/null) && [ -d $mount_point ]
+then
+    $command $eska@sftp.pjwstk.edu.pl: $mount_point 
+else
+    echo "Something went wrong!"
+fi

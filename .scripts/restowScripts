@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+
+cmd=stow
+folder=$HOME/.scripts/
+target=/usr/local/bin/
+
+if [ -d $folder ]
+then
+    echo "$folder exists"
+    echo "proceeding..."
+else
+    echo "$folder does not exist"
+    echo "exiting..."
+    exit 1
+fi
+
+if $(command -v $cmd &> /dev/null)
+then
+    echo "Stowing..."
+    sudo $cmd -d $folder -t $target -R .
+    echo "Stowed from $folder to $target"
+    echo "Done"
+else
+    echo "Something went wrong"
+    exit 1
+fi

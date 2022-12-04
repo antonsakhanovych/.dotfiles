@@ -21,6 +21,11 @@
                   eshell-mode-hook))
     (add-hook mode (lambda () (display-line-numbers-mode 0))))
 
+(use-package no-littering)
+
+(setq auto-save-file-name-transforms
+      `((".*" ,(no-littering-expand-var-file-name "auto-save/") t)))
+
 (set-face-attribute 'default nil :font "Fira Code Retina" :height my-config/default-font-size)
 
 (set-face-attribute 'fixed-pitch nil :font "Fira Code Retina" :height my-config/fixed-pitch-font-size)
