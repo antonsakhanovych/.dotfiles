@@ -1,5 +1,8 @@
 [user]
 	email = antonsakhanovych@gmail.com
 	name = Anton Sakhanovych
+	signingkey = 815E02FB58162243
 [safe]
 	directory = *
+[commit]
+	gpgSign = true
