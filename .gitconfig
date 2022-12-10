@@ -6,3 +6,5 @@
 	directory = *
 [commit]
 	gpgSign = true
+[core]
+	editor = emacs

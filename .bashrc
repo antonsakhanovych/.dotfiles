@@ -18,6 +18,9 @@ shopt -s extglob
 # exports
 export EDITOR="emacs -nw"
 
+# nim-related
+export PATH=/home/rubberduck/.nimble/bin:$PATH
+# export PATH=/home/rubberduck/.nimble/bin/nimlsp:$PATH
 # call starship prompt
 eval "$(starship init bash)"
 

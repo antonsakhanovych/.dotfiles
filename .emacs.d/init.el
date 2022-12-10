@@ -404,7 +404,7 @@
 (use-package org-roam
   :ensure t
   :custom
-  (org-roam-directory "~/RoamNotes")
+  (org-roam-directory "~/Repos/RoamNotes")
   (org-roam-completion-everywhere t)
   (org-roam-node-display-template
    (concat "${title:*} "

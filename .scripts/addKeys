@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+# Add the ssh-agent to the current shell
+eval `ssh-agent`
+
+
+# Get a list of all the private key files in the .ssh directory
+keys=$(ls ~/.ssh/* | grep -Ev ".*\.pub" | grep -v "config" | grep -v "known_hosts" | grep -v "authorized_keys" | grep -v "ssh_agent.log")
+
+# Loop through the list of keys and add them to the ssh-agent
+for key in $keys
+do
+  ssh-add $key
+done
