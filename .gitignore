@@ -1,4 +1,7 @@
-*~
+
+.ssh/*
+!.ssh/config
+
 .emacs.d/*
 !.emacs.d/init.el
 !.emacs.d/config.org
