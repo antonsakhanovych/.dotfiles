@@ -14,13 +14,11 @@ alias .5="cd ../../../../.."
 shopt -s autocd
 # enable patterns
 shopt -s extglob
-
-# exports
-export EDITOR="emacs -nw"
-
-# nim-related
-export PATH=/home/rubberduck/.nimble/bin:$PATH
-# export PATH=/home/rubberduck/.nimble/bin/nimlsp:$PATH
+# execute .bash_profile
+if [ -s ~/.bash_profile ]
+then
+    source ~/.bash_profile
+fi
 # call starship prompt
 eval "$(starship init bash)"
 

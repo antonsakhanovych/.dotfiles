@@ -48,6 +48,10 @@
 (require 'use-package)
 (setq use-package-always-ensure t)
 
+(use-package exec-path-from-shell)
+(when (memq window-system '(mac ns x))
+  (exec-path-from-shell-initialize))
+
 (use-package ivy
   :diminish
   :bind (("C-s" . swiper)
@@ -197,8 +201,8 @@
   ("C-c p" . projectile-command-map)
   :init
   ;; NOTE: Set this to the folder where you keep your Git repos!
-  (when (file-directory-p "~/Data/Projects")
-    (setq projectile-project-search-path '("~/Data/Projects")))
+  (when (file-directory-p "~/Repos")
+    (setq projectile-project-search-path '("~/Repos")))
   (setq projectile-switch-project-action #'projectile-dired))
 
 (use-package counsel-projectile

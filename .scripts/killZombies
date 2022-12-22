@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 
-# Find all zombie processes
-zombie_processes=$(ps -eo state | grep -w Z)
+# Find all zombie processes and store their process IDs in an array
+zombies=$(ps -A -o stat,pid | grep -w Z | awk '{print $2}')
 
-# Iterate over the zombie processes and kill them
-for zombie in $zombie_processes; do
-  pid=$(echo $zombie | awk '{print $1}')
-  kill -9 $pid
+# Iterate through the list of zombie PIDs
+for pid in $zombies; do
+    # Kill the zombie process
+    kill -9 $pid
 done

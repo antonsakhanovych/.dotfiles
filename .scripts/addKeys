@@ -1,8 +1,10 @@
 #!/usr/bin/env bash
 
 # Add the ssh-agent to the current shell
-eval `ssh-agent`
-
+#eval `ssh-agent`
+eval "$(ssh-agent -s)"
+#source <(ssh-agent -s)
+export SSH_AUTH_SOCK=$SSH_AUTH_SOCK
 
 # Get a list of all the private key files in the .ssh directory
 keys=$(ls ~/.ssh/* | grep -Ev ".*\.pub" | grep -v "config" | grep -v "known_hosts" | grep -v "authorized_keys" | grep -v "ssh_agent.log")
