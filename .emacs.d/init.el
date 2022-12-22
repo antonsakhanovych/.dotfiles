@@ -507,6 +507,19 @@
 
 (use-package quickrun)
 
+(use-package pyvenv
+:ensure t
+:config
+(pyvenv-mode t)
+
+;; Set correct Python interpreter
+(setq pyvenv-post-activate-hooks
+      (list (lambda ()
+              (setq python-shell-interpreter (concat pyvenv-virtual-env "bin/python3")))))
+(setq pyvenv-post-deactivate-hooks
+      (list (lambda ()
+              (setq python-shell-interpreter "python3")))))
+
 (use-package discover)
 
 (use-package mastodon
@@ -515,3 +528,16 @@
   (setq mastodon-instance-url "https://social.linux.pizza/"
         mastodon-active-user "rubberduck")
   (mastodon-discover))
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages
+   '(auto-virtualenv yaml-mode which-key visual-fill-column use-package typescript-mode rjsx-mode rainbow-delimiters quickrun pyvenv org-roam org-bullets no-littering nim-mode mastodon lua-mode lsp-ui lsp-pyright lsp-java lsp-ivy ivy-rich helpful general forge exec-path-from-shell evil-matchit evil-commentary evil-collection doom-themes doom-modeline discover counsel-projectile company-box all-the-icons)))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )

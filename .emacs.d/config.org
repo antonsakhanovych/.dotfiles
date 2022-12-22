@@ -664,9 +664,20 @@
 #+end_src
 ** Quickrun
 #+begin_src emacs-lisp :tangle ./init.el
-(use-package quickrun)
+  (use-package quickrun)
 #+end_src
-
+** Additional packages
+#+begin_src emacs-lisp :tangle ./init.el
+  (use-package auto-virtualenv
+  :ensure t
+  :init
+  (use-package pyvenv
+    :ensure t)
+  :config
+  (add-hook 'python-mode-hook 'auto-virtualenv-set-virtualenv)
+  (add-hook 'projectile-after-switch-project-hook 'auto-virtualenv-set-virtualenv)  ;; If using projectile
+  )
+#+end_src
 * Mastodon packages
 
 ** Discovery
