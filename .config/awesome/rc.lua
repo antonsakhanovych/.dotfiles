@@ -235,7 +235,11 @@ awful.key({ }, "XF86AudioLowerVolume", function () awful.util.spawn("amixer -q s
     awful.key({ modkey },            "b",     function ()
 	  awful.util.spawn("firefox") end,
        {description = "Open the browser(firefox)", group = "anton"}),
-
+    -- emacs
+    awful.key({ modkey },            "e",     function ()
+	  awful.util.spawn("emacs") end,
+       {description = "Open the text editor(emacs)", group = "anton"}),
+    
     -- Menubar
     awful.key({ modkey }, "p", function() menubar.show() end,
               {description = "show the menubar", group = "launcher"}),
